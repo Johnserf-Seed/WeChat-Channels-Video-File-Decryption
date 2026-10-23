@@ -1,7 +1,7 @@
 # ==========================================
 # Stage 1: Build Stage
 # ==========================================
-FROM node:18-bullseye-slim AS builder
+FROM node:22.23.4-bookworm-slim AS builder
 
 WORKDIR /app
 
@@ -23,7 +23,7 @@ RUN npx playwright install chromium --with-deps
 # ==========================================
 # Stage 2: Production Stage
 # ==========================================
-FROM node:18-bullseye-slim
+FROM node:22.23.4-bookworm-slim
 
 WORKDIR /app
 
